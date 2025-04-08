@@ -1,0 +1,91 @@
+{
+  "Bangalore": [
+    {
+      "hotelId": "BLR101",
+      "hotelName": "The Gardenia Grand",
+      "address": "No. 21, MG Road, Bangalore, Karnataka",
+      "pricePerNight": 3200.75,
+      "roomAvailability": 12,
+      "rating": 4.3,
+      "roomType": "Executive Deluxe"
+    },
+    {
+      "hotelId": "BLR102",
+      "hotelName": "Silicon City Suites",
+      "address": "Electronic City Phase 1, Bangalore, Karnataka",
+      "pricePerNight": 2800.00,
+      "roomAvailability": 8,
+      "rating": 4.1,
+      "roomType": "Superior Room"
+    },
+    {
+      "hotelId": "BLR103",
+      "hotelName": "Royal Orchid Bangalore",
+      "address": "Old Airport Road, Bangalore, Karnataka",
+      "pricePerNight": 4100.50,
+      "roomAvailability": 5,
+      "rating": 4.5,
+      "roomType": "Premium King"
+    }
+  ],
+
+  "Mumbai": [
+    {
+      "hotelId": "MUM201",
+      "hotelName": "Sea Breeze Residency",
+      "address": "Plot 45, Juhu Tara Road, Mumbai, Maharashtra",
+      "pricePerNight": 4800.00,
+      "roomAvailability": 7,
+      "rating": 4.6,
+      "roomType": "Sea View Suite"
+    },
+    {
+      "hotelId": "MUM202",
+      "hotelName": "The Gateway Mumbai",
+      "address": "Apollo Bunder, Colaba, Mumbai, Maharashtra",
+      "pricePerNight": 5300.00,
+      "roomAvailability": 4,
+      "rating": 4.8,
+      "roomType": "Luxury Heritage Room"
+    },
+    {
+      "hotelId": "MUM203",
+      "hotelName": "Palm Grove Hotel",
+      "address": "Bandra West, Mumbai, Maharashtra",
+      "pricePerNight": 3100.00,
+      "roomAvailability": 10,
+      "rating": 4.2,
+      "roomType": "Deluxe Queen"
+    }
+  ],
+
+  "Delhi": [
+    {
+      "hotelId": "DEL301",
+      "hotelName": "Capitol Heights Hotel",
+      "address": "Connaught Place, New Delhi, Delhi",
+      "pricePerNight": 3900.50,
+      "roomAvailability": 9,
+      "rating": 4.4,
+      "roomType": "Premium King"
+    },
+    {
+      "hotelId": "DEL302",
+      "hotelName": "Red Fort Residency",
+      "address": "Chandni Chowk, Old Delhi, Delhi",
+      "pricePerNight": 2700.00,
+      "roomAvailability": 6,
+      "rating": 4.0,
+      "roomType": "Standard Room"
+    },
+    {
+      "hotelId": "DEL303",
+      "hotelName": "The Imperial Delhi",
+      "address": "Janpath Lane, Connaught Place, New Delhi, Delhi",
+      "pricePerNight": 6100.00,
+      "roomAvailability": 3,
+      "rating": 4.9,
+      "roomType": "Heritage Suite"
+    }
+  ]
+}
