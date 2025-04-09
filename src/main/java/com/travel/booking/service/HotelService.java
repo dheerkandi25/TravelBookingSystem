@@ -1,12 +1,13 @@
 package com.travel.booking.service;
 
 import com.travel.booking.dto.Hotel;
+import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.*;
-
+@Service
 public class HotelService {
 
     private final List<Hotel> hotelList = new ArrayList<>();
