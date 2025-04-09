@@ -8,6 +8,15 @@ public class Hotel {
     private Integer roomAvailability;
     private float rating;
     private String roomType;
+    private int roomCount;
+
+    public int getRoomCount() {
+        return roomCount;
+    }
+
+    public void setRoomCount(int roomCount) {
+        this.roomCount = roomCount;
+    }
 
     public String getHotelId() {
         return hotelId;
