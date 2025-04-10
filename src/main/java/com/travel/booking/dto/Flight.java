@@ -5,11 +5,31 @@ import java.util.Date;
 public class Flight {
     private String flightId;
     private String airline;
-    private Date departureDate;
-    private Date arrivaleDate;
-    private float price;
-    private String  classType;
-    private String foodPreference;
+    private String destination;
+    private String origin;
+    private float rating;
+    private Integer availableSeats;
+    private Date departureTime;
+    private Date arrivalTime;
+
+    //constructor
+    public Flight(String flightId, String airline, String destination, String origin, float rating, Integer availableSeats, Date departureTime, Date arrivalTime) {
+        this.flightId = flightId;
+        this.airline = airline;
+        this.destination = destination;
+        this.origin = origin;
+        this.rating = rating;
+        this.availableSeats = availableSeats;
+        this.departureTime = departureTime;
+        this.arrivalTime = arrivalTime;
+    }
+    public String getOrigin() {
+        return origin;
+    }
+
+    public void setOrigin(String origin) {
+        this.origin = origin;
+    }
 
     public String getFlightId() {
         return flightId;
@@ -27,44 +47,12 @@ public class Flight {
         this.airline = airline;
     }
 
-    public Date getDepartureDate() {
-        return departureDate;
+    public String getDestination() {
+        return destination;
     }
 
-    public void setDepartureDate(Date departureDate) {
-        this.departureDate = departureDate;
-    }
-
-    public Date getArrivaleDate() {
-        return arrivaleDate;
-    }
-
-    public void setArrivaleDate(Date arrivaleDate) {
-        this.arrivaleDate = arrivaleDate;
-    }
-
-    public float getPrice() {
-        return price;
-    }
-
-    public void setPrice(float price) {
-        this.price = price;
-    }
-
-    public String getClassType() {
-        return classType;
-    }
-
-    public void setClassType(String classType) {
-        this.classType = String.valueOf(classType);
-    }
-
-    public String getFoodPreference() {
-        return foodPreference;
-    }
-
-    public void setFoodPreference(String foodPreference) {
-        this.foodPreference = foodPreference;
+    public void setDestination(String destination) {
+        this.destination = destination;
     }
 
     public float getRating() {
@@ -74,17 +62,22 @@ public class Flight {
     public void setRating(float rating) {
         this.rating = rating;
     }
-
-    public String getSeatNumber() {
-        return seatNumber;
+    public Integer getAvailableSeats() {
+        return availableSeats;
     }
-
-    public void setSeatNumber(String seatNumber) {
-        this.seatNumber = seatNumber;
+    public void setAvailableSeats(Integer availableSeats) {
+        this.availableSeats = availableSeats;
     }
-
-    private float rating;
-    private String seatNumber;
-
-
+    public Date getDepartureTime() {
+        return departureTime;
+    }
+    public void setDepartureTime(Date departureTime) {
+        this.departureTime = departureTime;
+    }
+    public Date getArrivalTime() {
+        return arrivalTime;
+    }
+    public void setArrivalTime(Date arrivalTime) {
+        this.arrivalTime = arrivalTime;
+    }
 }

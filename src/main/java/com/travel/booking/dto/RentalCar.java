@@ -1,12 +1,35 @@
 package com.travel.booking.dto;
 
+
 public class RentalCar {
     private String rentalId;
     private String company;
     private String carModel;
+    private String location;
     private double pricePerDay;
+    private int capacity;
+    private float rating;
+    
+    public RentalCar(String rentalId, String company, String carModel,String location, double pricePerDay, int capacity,
+			 float rating) {
+		super();
+		this.rentalId = rentalId;
+		this.company = company;
+		this.carModel = carModel;
+		this.location=location;
+		this.pricePerDay = pricePerDay;
+		this.capacity = capacity;
+		this.rating = rating;
+	}
 
-    public String getRentalId() {
+	public RentalCar() {
+		super();
+		
+	}
+
+
+
+	public String getRentalId() {
         return rentalId;
     }
 
@@ -38,14 +61,6 @@ public class RentalCar {
         this.pricePerDay = pricePerDay;
     }
 
-    public boolean isAvailable() {
-        return available;
-    }
-
-    public void setAvailable(boolean available) {
-        this.available = available;
-    }
-
     public float getRating() {
         return rating;
     }
@@ -54,8 +69,20 @@ public class RentalCar {
         this.rating = rating;
     }
 
-    private boolean available;
-    private float rating;
+    public int getCapacity() {
+		return capacity;
+	}
 
-    // Getters and Setters
+	public void setCapacity(int capacity) {
+		this.capacity = capacity;
+	}
+
+	public String getLocation() {
+		return location;
+	}
+
+	public void setLocation(String location) {
+		this.location = location;
+	}
+
 }
