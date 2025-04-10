@@ -2,7 +2,24 @@ package com.travel.booking.dto;
 
 public class Review {
     private String reviewId;
-    private Customer customer;
+    private String customerId;
+    private String bookingId;
+    private String comment;
+    private int rating;
+    private String serviceType; // "Flight", "Hotel", "CarRental"
+    
+
+    public Review(String reviewId, String customerId, String comment, int rating, String serviceType,String bookingId) {
+		super();
+		this.reviewId = reviewId;
+		this.customerId = customerId;
+		this.comment = comment;
+		this.rating = rating;
+		this.serviceType = serviceType;
+		this.bookingId=bookingId;
+	}
+
+	// Getters and Setters
 
     public String getReviewId() {
         return reviewId;
@@ -10,14 +27,6 @@ public class Review {
 
     public void setReviewId(String reviewId) {
         this.reviewId = reviewId;
-    }
-
-    public Customer getCustomer() {
-        return customer;
-    }
-
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
     }
 
     public String getComment() {
@@ -44,9 +53,21 @@ public class Review {
         this.serviceType = serviceType;
     }
 
-    private String comment;
-    private int rating;
-    private String serviceType; // "Flight", "Hotel", "CarRental"
+	public String getCustomerId() {
+		return customerId;
+	}
 
-    // Getters and Setters
+	public void setCustomerId(String customerId) {
+		this.customerId = customerId;
+	}
+
+	public String getBookingId() {
+		return bookingId;
+	}
+
+	public void setBookingId(String bookingId) {
+		this.bookingId = bookingId;
+	}
+
+   
 }

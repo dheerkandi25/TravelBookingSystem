@@ -9,6 +9,8 @@ public class RentalCarBooking {
 	private Date bookingDate;
 	
 	private String userId;
+	
+	private String rentalCarBookingId;
 
 	public RentalCar getRentalCar() {
 		return rentalCar;
@@ -18,11 +20,13 @@ public class RentalCarBooking {
 		this.rentalCar = rentalCar;
 	}
 
-	public RentalCarBooking(RentalCar rentalCar, Date bookingDate, String userId) {
+	public RentalCarBooking(RentalCar rentalCar, Date bookingDate, String userId,String rentalCarBookingId) {
 		super();
 		this.rentalCar = rentalCar;
 		this.setBookingDate(bookingDate);
 		this.userId=userId;
+		this.rentalCarBookingId=rentalCarBookingId;
+		
 	}
 
 	public Date getBookingDate() {
@@ -39,6 +43,14 @@ public class RentalCarBooking {
 
 	public void setUserId(String userId) {
 		this.userId = userId;
+	}
+
+	public String getRentalCarBookingId() {
+		return rentalCarBookingId;
+	}
+
+	public void setRentalCarBookingId(String rentalCarBookingId) {
+		this.rentalCarBookingId = rentalCarBookingId;
 	}
 	
 	

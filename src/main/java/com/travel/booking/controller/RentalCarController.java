@@ -44,11 +44,11 @@ public class RentalCarController {
      * @param userId
      */
     @PostMapping("/book")
-    public void bookRentalCar(
+    public String bookRentalCar(
             @RequestParam("rentalCarId") @NotBlank String rentalCarId,
             @RequestParam("date") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate bookingDate,
-            @RequestParam("userId") String userId) {
-        rentalCarBookingService.bookRentalCars(rentalCarId, Date.valueOf(bookingDate),userId);
+            @RequestParam("customerId") String customerId) {
+        return rentalCarBookingService.bookRentalCars(rentalCarId, Date.valueOf(bookingDate),customerId);
     }
 
     /**

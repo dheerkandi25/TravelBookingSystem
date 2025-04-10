@@ -4,6 +4,7 @@ import java.sql.Date;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Component;
@@ -16,7 +17,7 @@ public class RentalCarBookingDAOImpl implements RentalCarBookingDAO{
 	
 	//Hardcoded value for testing 
 	private List<RentalCarBooking> rentalCarsBooking=new ArrayList<>(Arrays.asList(
-            new RentalCarBooking(new RentalCar("C001", null, null, "Bangalore", 0, 0, 0),new Date(System.currentTimeMillis()), "user1"))
+            new RentalCarBooking(new RentalCar("C001", null, null, "Bangalore", 0, 0, 0),new Date(System.currentTimeMillis()), "user1","aabbccdd11"))
         );
 
 	@Override
@@ -28,8 +29,10 @@ public class RentalCarBookingDAOImpl implements RentalCarBookingDAO{
 	}
 
 	@Override
-	public void addBooking(String rentalCarId,String location, Date date, String userId) {
-		rentalCarsBooking.add(new RentalCarBooking(new RentalCar(rentalCarId, null, null, location, 0, 0, 0),date,userId));
+	public String addBooking(String rentalCarId,String location, Date date, String customerId) {
+		String rentalCarBookingId=UUID.randomUUID().toString();
+		rentalCarsBooking.add(new RentalCarBooking(new RentalCar(rentalCarId, null, null, location, 0, 0, 0),date,customerId,rentalCarBookingId));
+		return rentalCarBookingId;
 		
 	}
 

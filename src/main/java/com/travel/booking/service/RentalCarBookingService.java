@@ -40,12 +40,12 @@ public class RentalCarBookingService {
 		
 	}
 	
-	public void bookRentalCars(String rentalCarId, Date date, String userId) {
+	public String bookRentalCars(String rentalCarId, Date date, String customerId) {
 		String location=rentalCarDao.getRentalCarsById(rentalCarId).getLocation();
 		if(location==null) {
 			throw new RuntimeException("Invaid id");
 		}
-		rentalCarBooking.addBooking(rentalCarId,location, date, userId);
+		return rentalCarBooking.addBooking(rentalCarId,location, date, customerId);
 		
 	}
 	
