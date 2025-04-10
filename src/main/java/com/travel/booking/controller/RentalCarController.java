@@ -19,6 +19,13 @@ public class RentalCarController {
     @Autowired
     private RentalCarBookingService rentalCarBookingService;
 
+    /**
+     * endpoint to get available rental cars for a location and date
+     * 
+     * @param location
+     * @param bookingDate
+     * @return
+     */
     @GetMapping("/available")
     public List<RentalCar> getAvailableRentalCars(
             @RequestParam("location") @NotBlank String location,
@@ -29,14 +36,28 @@ public class RentalCarController {
     	return rentalCarBookingService.getAvailableRentalCars(location, Date.valueOf(bookingDate));
     }
 
+    /**
+     * 
+     * endpoint to book an available rental car by providing below details
+     * @param rentalCarId
+     * @param bookingDate
+     * @param userId
+     */
     @PostMapping("/book")
     public void bookRentalCar(
             @RequestParam("rentalCarId") @NotBlank String rentalCarId,
-            @RequestParam("date") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate bookingDate) {
-        rentalCarBookingService.bookRentalCars(rentalCarId, Date.valueOf(bookingDate));
+            @RequestParam("date") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate bookingDate,
+            @RequestParam("userId") String userId) {
+        rentalCarBookingService.bookRentalCars(rentalCarId, Date.valueOf(bookingDate),userId);
     }
 
-    @PostMapping("/add")
+    /**
+     * 
+     * Admin can add a new rental car for a location by providing all required details 
+     * 
+     * @param request
+     */
+    @PostMapping("/admin/add")
     public void addRentalCar(@Valid @RequestBody RentalCar request) {
         rentalCarBookingService.addRentalCars(
         		request

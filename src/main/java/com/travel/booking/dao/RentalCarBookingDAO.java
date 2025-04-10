@@ -9,6 +9,6 @@ public interface RentalCarBookingDAO {
 	
 	public List<RentalCarBooking> getBooking(String location,Date bookedDate);
 	
-	public void addBooking(String rentalCarId,String location, Date date );
+	public void addBooking(String rentalCarId,String location, Date date, String userId);
 
 }

@@ -34,19 +34,18 @@ public class RentalCarBookingService {
 				return !bookedCars.stream().anyMatch(bookedCar->bookedCar.getRentalCar().getRentalId().equalsIgnoreCase(availableCars.getRentalId()));
 			}else {
 				return true;
-			}
-			
+			}			
 			
 		}).collect(Collectors.toList());
 		
 	}
 	
-	public void bookRentalCars(String rentalCarId, Date date) {
+	public void bookRentalCars(String rentalCarId, Date date, String userId) {
 		String location=rentalCarDao.getRentalCarsById(rentalCarId).getLocation();
 		if(location==null) {
 			throw new RuntimeException("Invaid id");
 		}
-		rentalCarBooking.addBooking(rentalCarId,location, date);
+		rentalCarBooking.addBooking(rentalCarId,location, date, userId);
 		
 	}
 	

@@ -16,7 +16,7 @@ public class RentalCarBookingDAOImpl implements RentalCarBookingDAO{
 	
 	//Hardcoded value for testing 
 	private List<RentalCarBooking> rentalCarsBooking=new ArrayList<>(Arrays.asList(
-            new RentalCarBooking(new RentalCar("C001", null, null, "Bangalore", 0, 0, 0),new Date(System.currentTimeMillis())))
+            new RentalCarBooking(new RentalCar("C001", null, null, "Bangalore", 0, 0, 0),new Date(System.currentTimeMillis()), "user1"))
         );
 
 	@Override
@@ -28,8 +28,8 @@ public class RentalCarBookingDAOImpl implements RentalCarBookingDAO{
 	}
 
 	@Override
-	public void addBooking(String rentalCarId,String location, Date date) {
-		rentalCarsBooking.add(new RentalCarBooking(new RentalCar(rentalCarId, null, null, location, 0, 0, 0),date));
+	public void addBooking(String rentalCarId,String location, Date date, String userId) {
+		rentalCarsBooking.add(new RentalCarBooking(new RentalCar(rentalCarId, null, null, location, 0, 0, 0),date,userId));
 		
 	}
 

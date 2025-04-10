@@ -2,7 +2,6 @@ package com.travel.booking.controller;
 
 import com.travel.booking.dto.Flight;
 import com.travel.booking.service.FlightService;
-import jakarta.websocket.server.PathParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
