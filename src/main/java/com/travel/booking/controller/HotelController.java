@@ -18,7 +18,7 @@ public class HotelController {
         this.hotelService = hotelService;
     }
 
-    @GetMapping
+    @GetMapping("/getHotels")
     public List<Hotel> getHotels(@RequestParam(required = false) String city) {
         if (city != null && !city.isEmpty()) {
             return hotelService.getHotelsByCity(city);
@@ -30,4 +30,11 @@ public class HotelController {
     public String bookHotel(@RequestBody Hotel hotel) {
         return hotelService.bookHotel(hotel);
     }
+
+    @PostMapping("/addHotels")
+    public String addHotel(@RequestBody Hotel hotel) {
+        return hotelService.addHotel(hotel);
+    }
+
+
 }
