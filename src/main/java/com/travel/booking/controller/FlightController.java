@@ -19,13 +19,23 @@ public class FlightController {
     @GetMapping("/searchFlights")
     public List<Flight> searchFlights(@RequestParam("origin") String origin,
                                       @RequestParam("destination") String destination,@RequestParam("date") String date) throws ParseException {
-        return flightService.searchFlights(origin, destination,date);
+        try {
+            return flightService.searchFlights(origin, destination, date);
+        } catch (RuntimeException R) {
+            return null;
+        }
     }
 
     @PostMapping("/bookFlight")
-    public void bookFlight(@RequestParam("flightId") String flightId,
+    public String bookFlight(@RequestParam("flightId") String flightId,
                            @RequestParam("userId") String userId, @RequestParam("date") String bookingDate) throws ParseException {
-        flightService.bookFlight(flightId, userId, bookingDate);
+        try {
+            flightService.bookFlight(flightId, userId, bookingDate);
+            return "Flight booked successfully";
+        }
+        catch (RuntimeException R) {
+            return "No flights available";
+        }
     }
     @PostMapping("/addFlight")
     public void addFlight(@RequestBody Flight flight) throws IOException {

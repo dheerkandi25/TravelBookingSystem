@@ -76,13 +76,14 @@ public class FlightDAOImpl implements FlightDAO{
     public List<Flight> getFlightsByDate(String source, String destination, Date date) {
         return flights.stream().filter(flight -> flight.getOrigin().equalsIgnoreCase(source) &&
                 flight.getDestination().equalsIgnoreCase(destination) &&
-                flight.getDepartureTime().compareTo(date)==0)
+                flight.getDepartureTime().compareTo(date)==0 && flightAvailabilities.stream().filter(availability->availability.getFlightId().equalsIgnoreCase(flight.getFlightId()) && availability.getAvailableSeats().get(date)>0).count()>0)
                 .collect(Collectors.toList());
     }
 
     @Override
     public void addFlight(Flight flight) {
         flights.add(flight);
+        flightAvailabilities.add(new FlightAvailability(flight.getFlightId(), new HashMap<>(Map.of(flight.getDepartureTime(),flight.getAvailableSeats()))));
     }
 
     @Override

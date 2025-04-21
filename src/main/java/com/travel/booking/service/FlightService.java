@@ -20,7 +20,11 @@ public class FlightService {
     // Method to search for flights based on origin, destination, and departure date
     public List<Flight> searchFlights(String origin, String destination,String date) throws ParseException {
        Date bookingDate = new SimpleDateFormat("MM/dd/yyyy").parse(date);
-       return flightDAO.getFlightsByDate(origin, destination, bookingDate);
+       List<Flight> flights = flightDAO.getFlightsByDate(origin, destination, bookingDate);
+       if(flights.isEmpty()) {
+              throw new RuntimeException("No flights available");
+       }
+       return flights;
     }
 
     // Method to book a flight
